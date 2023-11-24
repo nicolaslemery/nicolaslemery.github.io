@@ -65,6 +65,35 @@
     Ce site a pour objectif de présenter mes travaux académiques.
     </p>
     <p></p>
+
+    <h2>gym</h2>
+    <button onclick="lireFichier()">Lire le fichier</button>
+
+    <div id="contenuFichier"></div>
+
+    <script>
+        function lireFichier() {
+            // Crée une instance de l'objet XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            // Spécifie le type de requête HTTP (GET) et l'URL du fichier
+            xhr.open('GET', 'gym.txt', true);
+
+            // Gère l'événement de chargement
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Affiche le contenu du fichier dans la div
+                    document.getElementById('contenuFichier').textContent = xhr.responseText;
+                } else {
+                    // En cas d'erreur, affiche un message d'erreur
+                    document.getElementById('contenuFichier').textContent = 'Erreur lors de la lecture du fichier.';
+                }
+            };
+
+            // Envoie la requête
+            xhr.send();
+        }
+    </script>
     <p></p>
 
     <a href="https://www.youtube.com" target="_blank">YouTube</a>
