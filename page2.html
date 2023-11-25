@@ -7,11 +7,20 @@
 </head>
 <body>
     
-    <h1>Contenu de la Page 2</h1>
+    <h1>Cours Estimations à posteriori</h1>
+
+    <button onclick="afficherPDF('cvNicoLemery.pdf')">Mon CV</button> <br>
 
     <p></p>
 
     <a href="index.html">Retour à la page principale</a>
+
+    <script>
+        function afficherPDF(nomFichier) {
+            // Crée une fenêtre pop-up pour afficher le PDF
+            window.open(nomFichier, '_blank');
+        }
+    </script>
 
 </body>
 </html>

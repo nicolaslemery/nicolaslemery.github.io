@@ -55,52 +55,40 @@
         th {
             background-color: #f2f2f2;
         }
+        button {
+            text-align: left;
+            display: block;
+            margin-left: 0; /* Supprime la marge ajoutée par défaut */
+        }
     </style>    
 </head>
 
 <body>
 
-    <h1>NLDDN</h1>
+    <h1> <span title="(Nicolas Lemery Deuxième Du Nom)">NLDDN </span></h1>
 
-    <p>Nicolas Lemery, 23 ans, étudiant en M2 modélisation et analyse numérique à l'université de Montpellier.
+    <p>Nicolas Lemery, 23 ans, étudiant en M2 MANU (modélisation et analyse numérique) à l'université de Montpellier. <br>
     Ce site a pour objectif de présenter mes travaux académiques.
     </p>
-    <p></p>
+    
+    <button onclick="afficherPDF('cvNicoLemery.pdf')">Mon CV</button>
 
-    <h2>gym</h2>
-    <button onclick="lireFichier()">Lire le fichier</button>
+    <button onclick="afficherPDF('lettreMotivExotec.pdf')">Lettre de motivation Exotec</button> <br>
 
-    <pre id="contenuFichier"></pre>
+    <button onclick="ouvrirPage2()">Cours estimations à posteriori</button> <br>
 
     <script>
-        function lireFichier() {
-            // Crée une instance de l'objet XMLHttpRequest
-            var xhr = new XMLHttpRequest();
-
-            // Spécifie le type de requête HTTP (GET) et l'URL du fichier
-            xhr.open('GET', 'gym.txt', true);
-
-            // Gère l'événement de chargement
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Affiche le contenu du fichier dans la div
-                    document.getElementById('contenuFichier').textContent = xhr.responseText;
-                } else {
-                    // En cas d'erreur, affiche un message d'erreur
-                    document.getElementById('contenuFichier').textContent = 'Erreur lors de la lecture du fichier.';
-                }
-            };
-
-            // Envoie la requête
-            xhr.send();
+        function afficherPDF(nomFichier) {
+            // Crée une fenêtre pop-up pour afficher le PDF
+            window.open(nomFichier, '_blank');
         }
+
+        function ouvrirPage2() {
+            // Change l'emplacement actuel de la fenêtre pour ouvrir la page2.html
+            window.location.href = 'page2.html';
+        }
+
     </script>
-
-    <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
-
-    <a href="page2.html">page 2</a>
-
-    <a href="fichiers.html">Fichiers</a>
 
 </body>
 </html>
