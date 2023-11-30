@@ -93,7 +93,15 @@
             window.location = 'about:blank'; // Redirige vers une page blanche
         }
 
-        // Vos autres fonctions JavaScript ici
+        function afficherPDF(nomFichier) {
+            // Crée une fenêtre pop-up pour afficher le PDF
+            window.open(nomFichier, '_blank');
+        }
+
+        function ouvrirPage2() {
+            // Change l'emplacement actuel de la fenêtre pour ouvrir la page2.html
+            window.location.href = 'page2.html';
+        }
     </script>
 
     </script>
