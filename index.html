@@ -58,7 +58,7 @@
         button {
             text-align: left;
             display: block;
-            margin-left: 0; /* Supprime la marge ajoutée par défaut */
+            margin-left: 0;
         }
     </style>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
@@ -68,7 +68,7 @@
 <body>
     <div id="content" style="display:none;"></div>
 
-    <h1> <span title="(Nicolas Lemery Deuxième Du Nom)">NLDDN </span></h1>
+    <h1> <span title="(Nicolas Lemery deuxième du nom)">NLDDN </span></h1>
 
     <p>Nicolas Lemery, 23 ans, étudiant en M2 MANU (modélisation et analyse numérique) à l'université de Montpellier. <br>
     Ce site a pour objectif de présenter mes travaux académiques.
@@ -79,28 +79,26 @@
 
     <button onclick="afficherPDF('lettreMotivExotec.pdf')">Lettre de motivation Exotec</button> <br>
 
-    <button onclick="ouvrirPage2()">Cours estimations à posteriori</button> <br>
+    <button onclick="ouvrirPage('page2.html')">Cours estimations à posteriori</button> <br>
 
     <script>
-        var password = prompt("Veuillez entrer le mot de passe pour accéder à cette page", "");
+        var password = prompt("Mot de passe", "");
         var hashedPassword = CryptoJS.SHA256(password).toString();
-        var correctHash = "434dc98a6ed56a4e3cd51af786cb6a2106a7b4ad3586567c218066a898340529"; // Remplacez ceci par le hash SHA-256 de votre mot de passe
+        var correctHash = "434dc98a6ed56a4e3cd51af786cb6a2106a7b4ad3586567c218066a898340529";
 
         if(hashedPassword == correctHash) {
             document.getElementById('content').style.display = 'block';
         } else {
-            alert("Mot de passe incorrect");
-            window.location = 'about:blank'; // Redirige vers une page blanche
+            alert("Alerte rouge");
+            window.location = 'about:blank';
         }
 
         function afficherPDF(nomFichier) {
-            // Crée une fenêtre pop-up pour afficher le PDF
             window.open(nomFichier, '_blank');
         }
 
-        function ouvrirPage2() {
-            // Change l'emplacement actuel de la fenêtre pour ouvrir la page2.html
-            window.location.href = 'page2.html';
+        function ouvrirPage(nomPage) {
+            window.location.href = nomPage;
         }
     </script>
 
